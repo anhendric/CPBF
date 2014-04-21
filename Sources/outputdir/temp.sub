@@ -1,0 +1,6 @@
+input="outputdir\main.o"
+input="outputdir\LuaFont2.o"
+input="outputdir\BFModuleWindow.o"
+input="outputdir\brainfuck.o"
+input="outputdir\PegTextStream.o"
+input="outputdir\bouton.o"

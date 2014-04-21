@@ -1,0 +1,44 @@
+# Project: CPBF
+# Makefile created by Dev-C++ 4.9.9.0
+
+CPP  = C:\PROGRA~1\CASIO\CLASSP~2\Bin\gcc_shc.exe -D__DEBUG__
+CC   = C:\PROGRA~1\CASIO\CLASSP~2\Bin\gcc_shc.exe -D__DEBUG__
+WINDRES = C:\PROGRA~1\CASIO\CLASSP~2\Bin\gcc_shc.exe
+RES  = 
+OBJ  = outputdir/main.o outputdir/LuaFont2.o outputdir/BFModuleWindow.o outputdir/brainfuck.o outputdir/PegTextStream.o outputdir/bouton.o $(RES)
+LINKOBJ  = outputdir/main.o outputdir/LuaFont2.o outputdir/BFModuleWindow.o outputdir/brainfuck.o outputdir/PegTextStream.o outputdir/bouton.o $(RES)
+LIBS =  -L"C:/PROGRA~1/Dev-Cpp/lib" -FO=library -NOLO -NOM  -g3 
+INCS =  -I"C:/PROGRA~1/CASIO/CLASSP~2/cp_include" 
+CXXINCS =  -I"C:/PROGRA~1/CASIO/CLASSP~2/cp_include" 
+BIN  = outputdir/CPBF.exe
+CXXFLAGS = $(CXXINCS)   -cpu=sh3 -NOLOGO -RTTI=OFF -NOEX -w -g3
+CFLAGS = $(INCS)   -cpu=sh3 -NOLOGO -RTTI=OFF -NOEX -w -g3
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before outputdir/CPBF.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "outputdir\CPBF.exe" $(LIBS)
+
+outputdir/main.o: main.cpp
+	$(CPP) -c main.cpp -o outputdir/main.o $(CXXFLAGS)
+
+outputdir/LuaFont2.o: LuaFont2.cpp
+	$(CPP) -c LuaFont2.cpp -o outputdir/LuaFont2.o $(CXXFLAGS)
+
+outputdir/BFModuleWindow.o: BFModuleWindow.cpp
+	$(CPP) -c BFModuleWindow.cpp -o outputdir/BFModuleWindow.o $(CXXFLAGS)
+
+outputdir/brainfuck.o: brainfuck.cpp
+	$(CPP) -c brainfuck.cpp -o outputdir/brainfuck.o $(CXXFLAGS)
+
+outputdir/PegTextStream.o: PegTextStream.cpp
+	$(CPP) -c PegTextStream.cpp -o outputdir/PegTextStream.o $(CXXFLAGS)
+
+outputdir/bouton.o: bouton.cpp
+	$(CPP) -c bouton.cpp -o outputdir/bouton.o $(CXXFLAGS)
